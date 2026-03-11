@@ -222,3 +222,7 @@ body {
             margin-right: 16px;
             color: #aaa;
         }
+
+        .clear {
+            height: 20px;
+        }
