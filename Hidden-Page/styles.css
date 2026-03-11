@@ -224,5 +224,5 @@ body {
         }
 
         .clear {
-            height: 20px;
+            height: 20px !important; 
         }
