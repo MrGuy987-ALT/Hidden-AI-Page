@@ -263,7 +263,6 @@ updateChatList();
 
             addMessage(
                 `<i>Using model: <b>${currentModel}</b><br>` +
-                `Click title to change model • Enable features below as needed.<br>` +
                 `${storageAvailable ? '' : 'Persistence disabled in this environment.'}</i>`, 
                 "bot"
             );
