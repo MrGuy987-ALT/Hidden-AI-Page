@@ -10,7 +10,7 @@ body {
         }
         #sidebar {
             width: 260px;
-            background: #0f0f1a;
+            background: #0066cc;
             border-right: 1px solid #333366;
             padding: 16px;
             overflow-y: auto;
@@ -19,7 +19,7 @@ body {
         }
         #new-chat {
             padding: 12px;
-            background: linear-gradient(90deg, #00d4ff, #7c4dff);
+            background: #1d1d1f;
             border: none;
             border-radius: 12px;
             color: white;
@@ -55,7 +55,7 @@ body {
         }
         #ai-chat-header {
             padding: 14px 18px;
-            background: linear-gradient(to right, #1a1a3a, #2a1a4a);
+            background: #0066cc;
             font-size: 16px;
             font-weight: 600;
             display: flex;
@@ -69,6 +69,7 @@ body {
         }
         #clear-btn {
             cursor: pointer;
+            font-size: 18px;
             color: #aaa;
             opacity: 0.8;
             margin: 0 6px;
