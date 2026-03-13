@@ -262,7 +262,8 @@ body {
     height: 45px !important;
 }
 
-.title {
+#title {
     text-align: center;
     flex: 1;
+    cursor: pointer;
 }

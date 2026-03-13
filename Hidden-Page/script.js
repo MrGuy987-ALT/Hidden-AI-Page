@@ -210,6 +210,74 @@ loadMessages();
 saveState();
 }
 
+function cursorEffect() {
+
+    // ─────────────────────────────────
+    // Ripple click effect
+    // ─────────────────────────────────
+    document.addEventListener("click", (e) => {
+
+        const r = document.createElement("div");
+
+        r.style.position = "absolute";
+        r.style.left = (e.pageX - 25) + "px";
+        r.style.top = (e.pageY - 25) + "px";
+        r.style.width = "50px";
+        r.style.height = "50px";
+        r.style.borderRadius = "50%";
+        r.style.border = "2px solid #0ff";
+        r.style.opacity = "0.8";
+        r.style.pointerEvents = "none";
+        r.style.zIndex = "9999";
+        r.style.animation = "ripple 0.6s ease-out";
+
+        document.body.appendChild(r);
+
+        setTimeout(() => r.remove(), 600);
+    });
+
+
+    // ─────────────────────────────────
+    // Ripple animation CSS
+    // ─────────────────────────────────
+    const style = document.createElement("style");
+    style.innerHTML = `
+    @keyframes ripple {
+        0% {
+            transform: scale(0.5);
+            opacity: 0.8;
+        }
+        100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }`;
+    document.head.appendChild(style);
+
+
+    // ─────────────────────────────────
+    // Spinning cursor directions
+    // ─────────────────────────────────
+    let i = 0;
+
+    const cursors = [
+        "n-resize",
+        "nw-resize",
+        "w-resize",
+        "sw-resize",
+        "s-resize",
+        "se-resize",
+        "e-resize",
+        "ne-resize"
+    ];
+
+    setInterval(() => {
+        i++;
+        document.body.style.cursor = cursors[i % 8];
+    }, 150);
+
+}
+
 async function showModelModal() {
 modelInput.value = currentModel;
 modelSelect.value = currentModel in ["gpt-4o-mini","gpt-4o","gemini-1.5-flash","gemini-1.5-pro"] 
@@ -224,6 +292,7 @@ modelInput.focus();
 document.getElementById("new-chat").onclick = newChat;
 document.getElementById("clear-btn").onclick = clearChat;
 document.getElementById("ai-chat-title").onclick = showModelModal;
+document.getElementById("title").onclick = cursorEffect;
 
 modelSelect.onchange = () => {
 if (modelSelect.value) modelInput.value = modelSelect.value;
@@ -267,6 +336,8 @@ updateChatList();
                 "bot"
             );
 }
+
+
 
 if (document.readyState === 'loading') {
 document.addEventListener('DOMContentLoaded', initChat);
