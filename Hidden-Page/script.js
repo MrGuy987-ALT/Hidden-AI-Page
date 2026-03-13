@@ -254,28 +254,6 @@ function cursorEffect() {
     }`;
     document.head.appendChild(style);
 
-
-    // ─────────────────────────────────
-    // Spinning cursor directions
-    // ─────────────────────────────────
-    let i = 0;
-
-    const cursors = [
-        "n-resize",
-        "nw-resize",
-        "w-resize",
-        "sw-resize",
-        "s-resize",
-        "se-resize",
-        "e-resize",
-        "ne-resize"
-    ];
-
-    setInterval(() => {
-        i++;
-        document.body.style.cursor = cursors[i % 8];
-    }, 150);
-
 }
 
 async function showModelModal() {
