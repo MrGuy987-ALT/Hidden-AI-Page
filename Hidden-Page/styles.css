@@ -261,3 +261,7 @@ body {
 .clear {
     height: 45px !important;
 }
+
+.title {
+    text-align: center;
+}
